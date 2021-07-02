@@ -1,0 +1,57 @@
+If JB = False Then
+    For i = 1 To 10
+        If GobwVis(i) = True Then
+            If ((Gobw(i) <= 30 And Gobw(i) + G_ObjM.Width / 25 >= 30) Or (Gobw(i) <= 30 + PicCha(ChaNum).Width / 25 And Gobw(i) + G_ObjM.Width / 25 >= 30 + PicCha(ChaNum).Width / 25) Or (30 <= Gobw(i) And Gobw(i) + G_ObjM.Width / 25 <= 30 + PicCha(ChaNum).Width / 25)) _
+            And _
+            ((Goby(i) + G_ObjM.Height / 25 >= JHei And Goby(i) <= JHei) Or (Goby(i) + G_ObjM.Height / 25 >= JHei + PicCha(ChaNum).Height / 25 And Goby(i) <= JHei + PicCha(ChaNum).Height / 25) Or (Goby(i) >= JHei And Goby(i) + G_ObjM.Height / 25 <= JHei + PicCha(ChaNum).Height / 25)) Then
+                Gobw(i) = 700
+                GobwVis(i) = False
+                GPoint = GPoint + 1
+            End If
+        End If
+    
+        If BobwVis(i) = True Then
+            If ((Bobw(i) <= 30 And Bobw(i) + (B_ObjM.Width / 22) >= 30) Or (Bobw(i) <= 30 + PicCha(ChaNum).Width / 22 And Bobw(i) + (B_ObjM.Width / 22) >= 30 + PicCha(ChaNum).Width / 22) Or (30 <= Bobw(i) And Bobw(i) + (B_ObjM.Width / 22) <= 30 + PicCha(ChaNum).Width / 22)) _
+            And _
+            ((Boby(i) + B_ObjM.Height / 20 >= JHei And Boby(i) <= JHei) Or (Boby(i) + B_ObjM.Height / 20 >= JHei + PicCha(ChaNum).Height / 20 And Boby(i) <= JHei + PicCha(ChaNum).Height / 20) Or (Boby(i) >= JHei And Boby(i) + B_ObjM.Height / 20 <= JHei + PicCha(ChaNum).Height / 20)) Then
+                'If JHei >= 275 Then
+                    For k = 1 To 10
+                        Bobw(k) = 700
+                        BobwVis(k) = False
+                    Next
+                    Timer1.Enabled = False
+                    Frm_Ques.Show
+                    Exit Sub
+                'End If
+            End If
+        End If
+    Next
+Else
+    For i = 1 To 10
+        If GobwVis(i) = True Then
+            If ((Gobw(i) <= 30 And Gobw(i) + G_ObjM.Width / 25 >= 30) Or (Gobw(i) <= 30 + PicCha(ChaNum).Height / 25 And Gobw(i) + G_ObjM.Width / 25 >= 30 + PicCha(ChaNum).Height / 25) Or (30 <= Gobw(i) And Gobw(i) + G_ObjM.Width / 25 <= 30 + PicCha(ChaNum).Height / 25)) _
+            And _
+            ((Goby(i) + G_ObjM.Height / 25 >= JHei And Goby(i) <= JHei) Or (Goby(i) + G_ObjM.Height / 25 >= JHei + PicCha(ChaNum).Width / 25 And Goby(i) <= JHei + PicCha(ChaNum).Width / 25) Or (Goby(i) >= JHei And Goby(i) + G_ObjM.Height / 25 <= JHei + PicCha(ChaNum).Width / 25)) Then
+                Gobw(i) = 700
+                GobwVis(i) = False
+                GPoint = GPoint + 1
+            End If
+        End If
+    
+        If BobwVis(i) = True Then
+            If ((Bobw(i) <= 30 And Bobw(i) + (B_ObjM.Width / 22) >= 30) Or (Bobw(i) <= 30 + PicCha(ChaNum).Height / 22 And Bobw(i) + (B_ObjM.Width / 22) >= 30 + PicCha(ChaNum).Height / 22) Or (30 <= Bobw(i) And Bobw(i) + (B_ObjM.Width / 22) <= 30 + PicCha(ChaNum).Height / 22)) _
+            And _
+            ((Boby(i) + B_ObjM.Height / 20 >= JHei And Boby(i) <= JHei) Or (Boby(i) + B_ObjM.Height / 20 >= JHei + PicCha(ChaNum).Width / 20 And Boby(i) <= JHei + PicCha(ChaNum).Width / 20) Or (Boby(i) >= JHei And Boby(i) + B_ObjM.Height / 20 <= JHei + PicCha(ChaNum).Width / 20)) Then
+                'If JHei >= 275 Then
+                    For k = 1 To 10
+                        Bobw(k) = 700
+                        BobwVis(k) = False
+                    Next
+                    Timer1.Enabled = False
+                    Frm_Ques.Show
+                    Exit Sub
+                'End If
+            End If
+        End If
+    Next
+End If
